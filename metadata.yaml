@@ -1,0 +1,24 @@
+name: cinder-nimblestorage
+summary: NimbleStorage integration for OpenStack Block Storage
+maintainer: OpenStack Charmers <openstack-charmers@lists.ubuntu.com>
+description: |
+ Cinder is the block storage service for the Openstack project.
+ This charm provides a NimbleStorage backend for Cinder.
+tags:
+  - openstack
+  - storage
+  - file-servers
+  - misc
+series:
+  - xenial
+  - bionic
+  - focal
+subordinate: true
+provides:
+  storage-backend:
+    interface: cinder-backend
+    scope: container
+requires:
+  juju-info:
+    interface: juju-info
+    scope: container

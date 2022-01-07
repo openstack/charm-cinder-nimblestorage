@@ -1,0 +1,14 @@
+build
+/*.charm
+.tox
+.stestr
+
+layers
+interfaces
+.testrepository
+*__pycache__*
+*.pyc
+venv
+
+.vscode
+tests/bundles/*@dev*

@@ -1,0 +1,73 @@
+options:
+  san-ip:
+    type: string
+    description: |
+        Management IP address of Nimble Storage array/group.
+  san-login:
+    type: string
+    description: |
+        Nimble Storage account login with minimum power user (admin) privilege
+        if RBAC is used.
+  san-password:
+    type: string
+    description: |
+        Password of the admin account for nimble array.
+  volume-driver:
+    type: string
+    description: |
+        Use either 'iscsi' for iSCSI or 'fc' for Fibre Channel.
+    default: iscsi
+  volume-backend-name:
+    type: string
+    description: |
+        A volume back-end name which is specified in the cinder.conf file.
+        This is also used while assigning a back-end name to the Nimble
+        volume type.
+    default: cinder_nimblestorage
+  use-multipath-for-image-xfer:
+    type: boolean
+    description: |
+        Enables or disables the use of multipathing.
+  encryption:
+    type: string
+    description: |
+        Used to enable encryption for a volume-type. Either 'yes' or 'no'.
+  performance-policy-name:
+    type: string
+    description: |
+        The name of a performance policy which exists on the Nimble array
+        and should be enabled for every volume in a volume type.
+  multi-initiator:
+    type: boolean
+    description: |
+        Used to enable multi-initiator access for a volume-type.
+  dedupe:
+    type: boolean
+    description: Used to enable dedupe support for a volume-type.
+  iops-limit:
+    type: string
+    description: |
+        Used to set the IOPS_LIMIT between 256 and 4294967294 for 
+        all volumes created for this volume-type.
+  folder:
+    type: string
+    description: |
+        It is the name of the folder which exists on the 
+        Nimble/Alletra 6k array and should be enabled for every 
+        volume in a volume type
+  pool-name:
+    type: string
+    description: |
+        Nimble Controller pool name
+  subnet-label:
+    type: string
+    description: |
+        Nimble Subnet Label
+  verify-cert-path:
+    type: string
+    description: |
+        Path to Nimble Array SSL certificate
+  verify-cert:
+    type: string
+    description: |
+        Whether to verify Nimble SSL Certificate
