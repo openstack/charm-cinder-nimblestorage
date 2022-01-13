@@ -45,7 +45,7 @@ applications:
       subnet-label: '*'
       verify-cert-path: 'None'
       verify-cert: 'False'
-# Add config options here
+
   rabbitmq-server:
     charm: cs:~openstack-charmers-next/rabbitmq-server
     num_units: 1

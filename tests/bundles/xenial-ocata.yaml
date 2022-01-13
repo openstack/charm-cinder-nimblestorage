@@ -7,17 +7,7 @@ machines:
   '1':
   '2':
   '3':
-relations:
-- - keystone:shared-db
-  - mysql:shared-db
-- - cinder:shared-db
-  - mysql:shared-db
-- - cinder:identity-service
-  - keystone:identity-service
-- - cinder:amqp
-  - rabbitmq-server:amqp
-- - cinder:storage-backend
-  - cinder-nimblestorage:storage-backend
+
 applications:
   mysql:
     charm: cs:~openstack-charmers-next/percona-cluster
@@ -55,9 +45,16 @@ applications:
       subnet-label: '*'
       verify-cert-path: 'None'
       verify-cert: 'False'
-# Add config options here
+  
   rabbitmq-server:
     charm: cs:~openstack-charmers-next/rabbitmq-server
     num_units: 1
     to:
     - '3'
+
+relations:
+  - [ keystone:shared-db, mysql:shared-db ]
+  - [ cinder:shared-db, mysql:shared-db ]
+  - [ cinder:identity-service, keystone:identity-service ]
+  - [ cinder:amqp, rabbitmq-server:amqp ]
+  - [ cinder:storage-backend, cinder-nimblestorage:storage-backend ]

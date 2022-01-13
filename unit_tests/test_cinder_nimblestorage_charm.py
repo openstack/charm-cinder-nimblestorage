@@ -13,15 +13,15 @@
 # limitations under the License.
 
 import unittest
-from src.charm import CinderSolidfireCharm
+from src.charm import CinderNimblestorageCharm
 from ops.model import ActiveStatus
 from ops.testing import Harness
 
 
-class TestCinderSolidfireCharm(unittest.TestCase):
+class TestCinderNimblestorageCharm(unittest.TestCase):
 
     def setUp(self):
-        self.harness = Harness(CinderSolidfireCharm)
+        self.harness = Harness(CinderNimblestorageCharm)
         self.addCleanup(self.harness.cleanup)
         self.harness.begin()
         self.harness.set_leader(True)
