@@ -1,11 +1,9 @@
 charm_name: cinder-nimblestorage
 tests:
-  - tests.tests_cinder_nimblestorage.CinderNimblestorageTest
+  - tests.tests.CinderNimblestorageTest
 configure:
   - zaza.openstack.charm_tests.keystone.setup.add_demo_user
 gate_bundles:
-  - xenial-ocata
-  - bionic-rocky
   - focal-ussuri
 smoke_bundles:
   - focal-ussuri

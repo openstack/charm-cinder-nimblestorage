@@ -18,7 +18,8 @@ machines:
 
 applications:
   mysql-innodb-cluster:
-    charm: cs:~openstack-charmers-next/mysql-innodb-cluster
+    charm: ch:mysql-innodb-cluster
+    channel: latest/edge
     num_units: 3
     options:
       source: *openstack-origin
@@ -27,23 +28,27 @@ applications:
       - '1'
       - '2'
   rabbitmq-server:
-    charm: cs:~openstack-charmers-next/rabbitmq-server
+    charm: ch:rabbitmq-server
+    channel: latest/edge
     num_units: 1
     options:
       source: *openstack-origin
     to:
       - '3'
   keystone:
-    charm: cs:~openstack-charmers/keystone
+    charm: ch:keystone
+    channel: yoga/edge
     options:
       openstack-origin: *openstack-origin
     num_units: 1
     to:
       - '4'
   keystone-mysql-router:
-    charm: cs:~openstack-charmers-next/mysql-router
+    charm: ch:mysql-router
+    channel: latest/edge
   cinder:
-    charm: cs:~openstack-charmers-next/cinder
+    charm: ch:cinder
+    channel: yoga/edge
     num_units: 1
     storage:
       block-devices: '40G'
@@ -53,18 +58,16 @@ applications:
       overwrite: "true"
     to:
       - '5'
-  
+
   cinder-mysql-router:
-    charm: cs:~openstack-charmers-next/mysql-router
-  
+    charm: ch:mysql-router
+    channel: latest/edge
+
   cinder-nimblestorage:
-    charm: ../../cinder-nimblestorage
+    charm: ../../cinder-nimblestorage.charm
     options:
       volume-driver: 'iscsi'
-      volume-backend-name: 'nimble-storage-iscsi'
-      san-ip: '10.11.12.13'
-      san-login: 'admin'
-      san-password: 'admin'
+      volume-backend-name: 'cinder-nimblestorage'
       use-multipath-for-image-xfer: True
       encryption: 'yes'
       performance-policy-name: 'test-performance-policy'
