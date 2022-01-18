@@ -58,7 +58,7 @@ applications:
     charm: cs:~openstack-charmers-next/mysql-router
   
   cinder-nimblestorage:
-    charm: cinder-nimblestorage
+    charm: ../../cinder-nimblestorage
     options:
       volume-driver: 'iscsi'
       volume-backend-name: 'nimble-storage-iscsi'
