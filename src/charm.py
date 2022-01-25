@@ -46,9 +46,12 @@ class CinderNimblestorageCharm(CinderStoragePluginCharm):
         cget = charm_config.get
 
         volume_driver = cget('volume-driver')
+        volume_backend_name = cget(
+            'volume-backend-name') or self.framework.model.app.name
 
         raw_options = [
             ('volume_driver', VOLUME_DRIVERS[volume_driver]),
+            ('volume_backend_name', volume_backend_name),
             ('san_ip', cget('san-ip')),
             ('san_login', cget('san-login')),
             ('san_password', cget('san-password')),

@@ -20,10 +20,12 @@ options:
   volume-backend-name:
     type: string
     description: |
-        A volume back-end name which is specified in the cinder.conf file.
-        This is also used while assigning a back-end name to the Nimble
-        volume type.
-    default: cinder_nimblestorage
+        Volume backend name for the backend. The default value is the
+        application name in the Juju model, e.g. "cinder-nimble-mybackend"
+        if it's deployed as `juju deploy cinder-nimble cinder-nimble-mybackend`
+        A common backend name can be set to multiple backends with the
+        same characters so that those can be treated as a single virtual
+        backend associated with a single volume type.
   use-multipath-for-image-xfer:
     type: boolean
     description: |
