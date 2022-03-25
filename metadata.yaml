@@ -10,9 +10,8 @@ tags:
   - file-servers
   - misc
 series:
-  - xenial
-  - bionic
   - focal
+  - jammy
 subordinate: true
 provides:
   storage-backend:
