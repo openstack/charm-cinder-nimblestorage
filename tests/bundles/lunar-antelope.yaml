@@ -1,4 +1,4 @@
-series: jammy
+series: lunar
 variables:
   openstack-origin: &openstack-origin distro
 comment:
