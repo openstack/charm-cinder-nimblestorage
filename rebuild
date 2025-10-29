@@ -1,1 +1,5 @@
-b814ab92-4cdf-4f92-8ee5-578e060f3c43
+# This file is used to trigger rebuilds
+# when dependencies of the charm change,
+# but nothing in the charm needs to.
+# simply change the uuid to something new
+0fe41548-f546-4ce2-827d-b6e2edd87b88
