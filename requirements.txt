@@ -20,7 +20,7 @@ ops==2.12.0
     #   ops-openstack
 ops-openstack @ git+https://opendev.org/openstack/charm-ops-openstack
     # via -r requirements.in
-pbr==6.0.0
+pbr==7.0.3
     # via charmhelpers
 pyyaml==6.0.1
     # via
