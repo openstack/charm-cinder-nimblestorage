@@ -5,12 +5,13 @@ description: |
   Cinder is the block storage service for the Openstack project.
   This charm provides a NimbleStorage backend for Cinder.
 tags:
-  - openstack
-  - storage
-  - file-servers
-  - misc
+- openstack
+- storage
+- file-servers
+- misc
 series:
-  - jammy
+- jammy
+- noble
 subordinate: true
 provides:
   storage-backend:
